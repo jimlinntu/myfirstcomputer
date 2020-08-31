@@ -71,6 +71,7 @@ Thanks to [leovincentseles](https://github.com/leovincentseles)'s teaching.
 * `lsblk -o NAME,FSTYPE,LABEL,SIZE,MOUNTPOINT` <https://askubuntu.com/questions/1029040/how-to-manually-mount-a-partition>
 * `ls -l /dev/disk/by-partlabel/`
 * `su - <user>`
+* `groups`
 
 ## References
 * <https://wiki.ubuntu.com/Kernel/Firmware>
@@ -83,3 +84,6 @@ Thanks to [leovincentseles](https://github.com/leovincentseles)'s teaching.
 * <https://wiki.archlinux.org/index.php/Fstab#GPT_partition_UUIDs>
 * <https://unix.stackexchange.com/questions/14165/list-partition-labels-from-the-command-line>
 * <https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/>
+* <https://wiki.archlinux.org/index.php/users_and_groups>
+* <https://unix.stackexchange.com/questions/3568/how-to-switch-between-users-on-one-terminal>
+* <https://www.cyberciti.biz/faq/linux-show-groups-for-user/>
