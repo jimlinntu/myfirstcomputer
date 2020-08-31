@@ -3,7 +3,7 @@
 ## Settings
 * Motherboard: [B450M MORTAR MAX](https://www.msi.com/Motherboard/B450M-MORTAR-MAX)
     * Note: `PCI_E4 slot will be unavailable when an M.2 SSD is installed in the M2_2 slot.` I finally figure out this from the output of `dmesg`.
-* CPU: AMD Ryzen 5 360X
+* CPU: AMD Ryzen 5 3600X
 * GPU: ASUS DUAL-RTX2070S-O8G-EVO
 * NIC: PCE-AC55BT PCI-E
     * Need `iwlwifi-8000C-13.ucode` firmware (<https://www.asus.com/Networking/PCE-AC55BT-B1/>)
