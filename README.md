@@ -4,13 +4,13 @@
 * Motherboard: [B450M MORTAR MAX](https://www.msi.com/Motherboard/B450M-MORTAR-MAX)
     * Note: `PCI_E4 slot will be unavailable when an M.2 SSD is installed in the M2_2 slot.` I finally figure out this from the output of `dmesg`.
 * CPU: AMD Ryzen 5 360X
-* GPU: ASUS RUAL-RTX2070S-O8G-EVO
+* GPU: ASUS DUAL-RTX2070S-O8G-EVO
 * NIC: PCE-AC55BT PCI-E
     * Need `iwlwifi-8000C-13.ucode` firmware (<https://www.asus.com/Networking/PCE-AC55BT-B1/>)
     * Linux kernel 4.1+ (<https://www.intel.com/content/www/us/en/support/articles/000005511/network-and-i-o/wireless.html>)
 * OS: [Ubuntu 18.04](http://old-releases.ubuntu.com/releases/18.04.2/ubuntu-18.04.2-desktop-amd64.iso)
     * I use [balenaEtcher](https://www.balena.io/etcher/) to create a bootable usb drive.
-    * Make sure to tick `Install third-party software` when you install by the GUI the OS.
+    * Make sure to tick `Install third-party software` when you install by the GUI.
 
 ## Installation
 
