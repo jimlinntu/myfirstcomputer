@@ -43,6 +43,23 @@ Follow the tutorial in <https://medium.com/@racktar7743/ubuntu-%E5%9C%A8-ubuntu-
 * DRAM Setting: Set A-XMP to `Profile 1 DDR4 3200MHz`
 Thanks to [leovincentseles](https://github.com/leovincentseles)'s teaching.
 
+* Hard drive setup:
+    * Enter `lshw -C disk` to determine which `/dev/sd?` is your hard drive. Mine is in `/dev/sda`
+    * Use `parted` to create GPT partitions: `parted /dev/sda`
+    * `mkfs -t ext4 /dev/sda`
+    * `blkid` to get `/dev/sda`'s UUID
+    * `/etc/fstab`: `UUID=98a81274-10f7-40db-872a-03df048df366 /     ext4   defaults  0      1`
+
+* Create a new user:
+    * `useradd -m <your new user>`
+    * `groupadd <a group>`
+    * `usermod -a -G <a group>`
+
+* Create a shared folder for multiple users:
+    * `chgrp <a group> <folder>`
+    * `chmod g+s <folder>` (Arch Linux: To allow write access to a specific group, shared files/folders can be made writeable by default for everyone in this group and the owning group can be automatically fixed to the group which owns the parent directory by setting the setgid bit on this directory)
+    * `chmod +t <folder>` (Ubuntu: The last "chmod +t" adds the sticky bit, so that people can only delete their own files and sub-directories in a directory, even if they have write permissions to it (see man chmod).)
+
 ## Troubleshooting
 
 (all starting with `sudo`)
@@ -50,8 +67,19 @@ Thanks to [leovincentseles](https://github.com/leovincentseles)'s teaching.
 * `lspci -v`
 * `dmesg`
 * `rfkill list`
+* `lsblk`
+* `lsblk -o NAME,FSTYPE,LABEL,SIZE,MOUNTPOINT` <https://askubuntu.com/questions/1029040/how-to-manually-mount-a-partition>
+* `ls -l /dev/disk/by-partlabel/`
+* `su - <user>`
 
 ## References
 * <https://wiki.ubuntu.com/Kernel/Firmware>
 * [Linux* Support for Intel® Wireless Adapters](https://www.intel.com/content/www/us/en/support/articles/000005511/network-and-i-o/wireless.html)
 * [MSI®如何用M-FLASH更新單BIOS](https://www.youtube.com/watch?v=zVPxzWeEjUA)
+* [Arch Linux Parted](https://wiki.archlinux.org/index.php/Parted)
+* <https://help.ubuntu.com/community/InstallingANewHardDrive>
+* <https://help.ubuntu.com/community/UsingUUID>
+* <https://wiki.archlinux.org/index.php/Parted#Create_new_partition_table>
+* <https://wiki.archlinux.org/index.php/Fstab#GPT_partition_UUIDs>
+* <https://unix.stackexchange.com/questions/14165/list-partition-labels-from-the-command-line>
+* <https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/>
