@@ -16,6 +16,7 @@
 * OS: [Ubuntu 18.04](http://old-releases.ubuntu.com/releases/18.04.2/ubuntu-18.04.2-desktop-amd64.iso)
     * I use [balenaEtcher](https://www.balena.io/etcher/) to create a bootable usb drive.
     * Make sure to tick `Install third-party software` when you install by the GUI.
+    * I personally use the linux 5.4.0-48-generic kernel (You can see your version by `uname -r`).
 
 ## Installation
 
@@ -72,6 +73,7 @@ Thanks to [leovincentseles](https://github.com/leovincentseles)'s teaching.
 * `ls -l /dev/disk/by-partlabel/`
 * `su - <user>`
 * `groups`
+* `rmmod btusb` and then `modprobe btusb` when you cannot restart your bluetooth.
 
 ## References
 * <https://wiki.ubuntu.com/Kernel/Firmware>
@@ -87,3 +89,6 @@ Thanks to [leovincentseles](https://github.com/leovincentseles)'s teaching.
 * <https://wiki.archlinux.org/index.php/users_and_groups>
 * <https://unix.stackexchange.com/questions/3568/how-to-switch-between-users-on-one-terminal>
 * <https://www.cyberciti.biz/faq/linux-show-groups-for-user/>
+* Bluetooth related:
+    * <https://bugzilla.kernel.org/show_bug.cgi?id=203535>
+    * <https://bbs.archlinux.org/viewtopic.php?id=193813>
